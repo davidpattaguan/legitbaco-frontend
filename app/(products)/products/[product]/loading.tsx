@@ -1,9 +1,3 @@
-import { notFound } from "next/navigation"
-import axios from "axios"
-import { z } from "zod"
-
-import { ProductRequest } from "@/lib/validations/product"
-
 interface PageProps {
   params: { product: string }
 }

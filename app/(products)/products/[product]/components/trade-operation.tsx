@@ -30,6 +30,7 @@ const TradeOperation = () => {
         isOpen={open}
         onClose={() => setOpen(false)}
         loading={loading}
+        onConfirm={() => {}}
       />
       <Button className="w-full h-16" onClick={requestTrade}>
         Request Trade

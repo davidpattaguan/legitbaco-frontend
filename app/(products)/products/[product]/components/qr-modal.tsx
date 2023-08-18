@@ -21,19 +21,9 @@ const formSchema = z.object({
 
 interface AlertModalProps {
   user: any
-  isOpen: boolean
-  onClose: () => void
-  onConfirm: () => void
-  loading: boolean
 }
 
-export const QrModal: React.FC<AlertModalProps> = ({
-  isOpen,
-  onClose,
-  user,
-  onConfirm,
-  loading,
-}) => {
+export const QrModal: React.FC<AlertModalProps> = ({ user }) => {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {

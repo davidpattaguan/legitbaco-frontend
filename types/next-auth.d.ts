@@ -28,13 +28,17 @@ declare module "next-auth" {
     }
   }
   interface User {
-    id: string
-    email: string
-    firstName: string
-    lastName: string
-    role: string
-    picture: string
+    auth: {
+      id: string
+      email: string
+      firstName: string
+      lastName: string
+      role: string
+      picture: string
+      token: string
+      onboarding: boolean
+      avatar: string
+    }
     token: string
-    onboarding: boolean
   }
 }

@@ -40,8 +40,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-type Team = (typeof groups)[number]["teams"][number]
-
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
 interface TeamSwitcherProps extends PopoverTriggerProps {}
@@ -59,17 +57,17 @@ export default function CollectionSwitcher({ stores, className }: any) {
 
   const [open, setOpen] = React.useState(false)
   const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false)
-  const [selectedTeam, setSelectedTeam] = React.useState<Team>(
+  const [selectedTeam, setSelectedTeam] = React.useState<any>(
     groups[0].teams[0]
   )
 
-  const formattedItems = stores.map((item) => ({
+  const formattedItems = stores.map((item: any) => ({
     label: item.name,
     value: item.id,
   }))
 
   const currentStore = formattedItems.find(
-    (item) => item.value === params.collectionId
+    (item: any) => item.value === params.collectionId
   )
 
   const onStoreSelect = (store: { value: string; label: string }) => {
@@ -106,7 +104,7 @@ export default function CollectionSwitcher({ stores, className }: any) {
               <CommandInput placeholder="Search team..." />
               <CommandEmpty>No team found.</CommandEmpty>
               <CommandGroup heading="Stores">
-                {formattedItems.map((store) => (
+                {formattedItems.map((store: any) => (
                   <CommandItem
                     key={store.value}
                     onSelect={() => onStoreSelect(store)}

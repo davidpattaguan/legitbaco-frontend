@@ -49,8 +49,7 @@ export function CreateCollectionForm() {
         description: "Successfully added a Collection",
         variant: "default",
       })
-    } catch (error) {
-      console.log(error as any)
+    } catch (error: any) {
       if (error.status == 400) {
         return toast({
           title: "Collection Creation Failed",

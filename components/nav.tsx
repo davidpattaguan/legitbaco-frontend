@@ -33,8 +33,7 @@ export function DashboardNav({ className, items }: DashboardNavProps) {
                   {itemhead.title}
                 </h2>
                 <div className="space-y-1">
-                  {itemhead.subitems.map((item, index) => {
-                    const Icon = Icons[item.icon || "arrowRight"]
+                  {itemhead.subitems.map((item: any, index: any) => {
                     return (
                       <>
                         <Link
@@ -50,7 +49,7 @@ export function DashboardNav({ className, items }: DashboardNavProps) {
                               item.disabled && "cursor-not-allowed opacity-80"
                             )}
                           >
-                            <Icon className="mr-2 h-4 w-4" />
+                            {/* <Icon className="mr-2 h-4 w-4" /> */}
                             {item.title}
                           </span>
                         </Link>

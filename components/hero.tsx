@@ -175,16 +175,8 @@ export const productCategories = [
       },
     ],
   },
-] satisfies {
-  title: Product["category"]
-  image: string
-  subcategories: {
-    title: string
-    description?: string
-    image?: string
-    slug: string
-  }[]
-}[]
+]
+
 export function Hero() {
   // hero carousel with pagination
   const [currentImage, setCurrentImage] = React.useState(0)
