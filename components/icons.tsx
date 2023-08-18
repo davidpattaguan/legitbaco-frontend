@@ -44,7 +44,7 @@ import {
   User,
   Users,
   Verified,
-  ViewIcon,
+  View,
   X,
   type Icon as LucideIcon,
 } from "lucide-react"
@@ -55,7 +55,7 @@ export const Icons = {
   settings2: Settings2,
   sun: SunMedium,
   heart: Heart,
-  view: ViewIcon,
+  view: View,
   hide: EyeOffIcon,
   linechart: LineChart,
   moon: Moon,
