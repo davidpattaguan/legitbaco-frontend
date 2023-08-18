@@ -61,12 +61,13 @@ export default async function IndexPage({ params }: PageProps) {
           <h1 className="font-bold text-3xl">{name}</h1>
           <div className="flex gap-1 items-center">
             <h3 className="text-md">Created by: {shop.name}</h3>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <Icons.verified className="w-6 h-6 text-white dark:text-inherit fill-yellow-500" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="mt-2 flex gap-2">
+          Category:
           <Badge className="text-xs rounded-sm" variant={"outline"}>
             {product.data.category_name}
           </Badge>
@@ -126,12 +127,12 @@ export default async function IndexPage({ params }: PageProps) {
                       <Icons.calendarclock />
                     </div>
 
-                    <p>Sale ends July 13, 2025 at 8:14 PM</p>
+                    <p>Trading Features Coming Soon!</p>
                   </div>
                 </CardHeader>
                 <CardContent className="p-5 space-y-5 bg-slate-50 dark:bg-inherit">
                   <h1 className="text-4xl font-semibold">
-                    ₱ {product.data.price.$numberDecimal}
+                    ₱ {product.data.price.$numberDecimal}.00
                   </h1>
                   <div className="flex gap-2">
                     {product.data.tradable === true ? (
@@ -159,7 +160,7 @@ export default async function IndexPage({ params }: PageProps) {
                 <CardContent className="p-5 flex gap-2 items-center">
                   <p>Tags: </p>
                   <div className="flex gap-2">
-                    {product.data.sub_category.map((tag: any) => (
+                    {product.data.tags.map((tag: any) => (
                       <Badge>{tag}</Badge>
                     ))}
                   </div>
