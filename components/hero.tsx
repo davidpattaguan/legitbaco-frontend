@@ -209,17 +209,13 @@ export function Hero() {
         aria-describedby="hero-carousel"
         className="relative"
       >
-        <AspectRatio ratio={16 / 6}>
-          <div className="absolute inset-0 z-10 " />
-          <Image
-            src={heroImages[currentImage]?.src ?? "/images/hero-image-one.webp"}
-            alt={heroImages[currentImage]?.title ?? "Hero Image One"}
-            fill
-            className="object-cover"
-          />
-        </AspectRatio>
+        <img
+          src={"https://iili.io/HD8FCLF.jpg"}
+          alt="Cover"
+          className="object-cover h-[64vh] w-full"
+        />
 
-        <div className="absolute inset-x-0 bottom-2 z-20 flex justify-center gap-2 pb-2">
+        {/* <div className="absolute inset-x-0 bottom-2 z-20 flex justify-center gap-2 pb-2">
           {heroImages.map((image, index) => (
             <Button
               key={image.title}
@@ -234,7 +230,7 @@ export function Hero() {
               </span>
             </Button>
           ))}
-        </div>
+        </div> */}
         {/* <div className="absolute inset-x-0 inset-y-1/2 z-20 hidden justify-between px-4 py-2 md:flex">
         <Button
           size="sm"
@@ -258,17 +254,14 @@ export function Hero() {
       <section
         id="categories"
         aria-labelledby="categories-heading"
-        className="space-y-6 py-6 md:pt-5 lg:pt-5 container mx-auto mt-5"
+        className="space-y-6 py-6 md:pt-5  container mx-auto "
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        {/* <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
             Categories
           </h2>
-          {/* <Balance className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Explore our categories and find the best products for you
-          </Balance> */}
-        </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+        </div> */}
+        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {productCategories.map((category) => (
             <Link
               aria-label={`Go to ${category.title}`}
@@ -295,7 +288,7 @@ export function Hero() {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
       </section>
     </>
   )
