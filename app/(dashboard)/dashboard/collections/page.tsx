@@ -34,7 +34,7 @@ async function checkOnBoarding(user: any) {
   }
 }
 
-export const CollectionsPage = async () => {
+export const page = async () => {
   const user = await getCurrentUser()
 
   if (!user) {
@@ -64,4 +64,4 @@ export const CollectionsPage = async () => {
   return <>Loading Collections Please Wait</>
 }
 
-export default CollectionsPage
+export default page
