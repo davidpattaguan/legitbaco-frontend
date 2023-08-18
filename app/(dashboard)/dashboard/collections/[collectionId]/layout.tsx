@@ -95,7 +95,7 @@ export default async function DashboardLayout({
               </>
             ) : (
               <>
-                <Link
+                {/* <Link
                   href="/login"
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "sm" }),
@@ -103,7 +103,7 @@ export default async function DashboardLayout({
                   )}
                 >
                   Login
-                </Link>
+                </Link> */}
               </>
             )}
           </nav>

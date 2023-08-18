@@ -6,10 +6,8 @@ import { Card, CardContent, CardHeader } from "../ui/card"
 
 export const ProductVerifyImage = ({
   src,
-  name,
   likes,
   visits,
-  product,
   currentOwner,
 }: any) => {
   return (

@@ -212,7 +212,7 @@ export function Hero() {
         <img
           src={"https://iili.io/HD8FCLF.jpg"}
           alt="Cover"
-          className="object-cover h-[64vh] w-full"
+          className="object-cover mt-16 h-[25vh] sm:h-[32vh] md:h-[50vh] lg:h-[64vh] w-full "
         />
 
         {/* <div className="absolute inset-x-0 bottom-2 z-20 flex justify-center gap-2 pb-2">
