@@ -34,7 +34,7 @@ async function checkOnBoarding(user: any) {
   }
 }
 
-export const page = async () => {
+export const CollectionsPage = async () => {
   const user = await getCurrentUser()
 
   if (!user) {
@@ -60,4 +60,4 @@ export const page = async () => {
   }
 }
 
-export default page
+export default CollectionsPage
