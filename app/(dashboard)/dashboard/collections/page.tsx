@@ -61,7 +61,7 @@ export const CollectionsPage = async () => {
     redirect(`/dashboard/collections/${collections.data[0].id}`)
   }
 
-  return <>Loading</>
+  return <>Loading Collections Please Wait</>
 }
 
 export default CollectionsPage
