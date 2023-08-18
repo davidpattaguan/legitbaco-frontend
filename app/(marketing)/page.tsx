@@ -45,7 +45,7 @@ export default async function IndexPage() {
             <h2 className="flex-1 text-2xl font-medium sm:text-3xl">
               Featured Items
             </h2>
-            <Link href="/products">
+            {/* <Link href="/products">
               <div
                 className={cn(
                   buttonVariants({
@@ -56,7 +56,7 @@ export default async function IndexPage() {
                 View all
                 <span className="sr-only">View all products</span>
               </div>
-            </Link>
+            </Link> */}
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {items?.map((product: any) => (
