@@ -55,9 +55,13 @@ export const CollectionsPage = async () => {
 
   if (collections.data.length == 0) {
     redirect(`/create-collection`)
-  } else {
+  }
+
+  if (collections.data.length != 0) {
     redirect(`/dashboard/collections/${collections.data[0].id}`)
   }
+
+  return <>Loading</>
 }
 
 export default CollectionsPage
