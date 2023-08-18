@@ -36,7 +36,6 @@ export default async function IndexPage() {
     <>
       <Hero />
       <div className="container">
-        {" "}
         <section
           id="featured-products"
           aria-labelledby="featured-products-heading"

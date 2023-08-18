@@ -45,7 +45,7 @@ export default async function MarketingLayout({
                 </>
               ) : (
                 <>
-                  <Link
+                  {/* <Link
                     href="/login"
                     className={cn(
                       buttonVariants({ variant: "secondary", size: "sm" }),
@@ -53,7 +53,7 @@ export default async function MarketingLayout({
                     )}
                   >
                     Login
-                  </Link>
+                  </Link> */}
                 </>
               )}
             </nav>

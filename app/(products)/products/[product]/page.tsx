@@ -134,17 +134,17 @@ export default async function IndexPage({ params }: PageProps) {
                     ₱ {product.data.price.$numberDecimal}
                   </h1>
                   <div className="flex gap-2">
-                    {product.data.tradable === true ? (
+                    {/* {product.data.tradable === true ? (
                       <>
                         <TradeOperation />
                       </>
-                    ) : (
-                      <>
-                        <Button className="w-full h-16" disabled>
-                          Not Tradable
-                        </Button>
-                      </>
-                    )}
+                    ) : ( */}
+                    <>
+                      <Button className="w-full h-16" disabled>
+                        Trading Features Coming Soon.
+                      </Button>
+                    </>
+                    {/* )} */}
                   </div>
                 </CardContent>
               </Card>
