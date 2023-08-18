@@ -67,10 +67,14 @@ export default async function IndexPage({ params }: PageProps) {
           </div>
         </div>
         <div className="mt-2 flex gap-2">
-          Category:
-          <Badge className="text-xs rounded-sm" variant={"outline"}>
+          <Badge className="text-xs rounded-sm" variant={"default"}>
             {product.data.category_name}
           </Badge>
+          {product.data.sub_category.map((item: any) => (
+            <Badge className="text-xs rounded-sm" variant={"outline"}>
+              {item}
+            </Badge>
+          ))}
         </div>
       </>
     )
