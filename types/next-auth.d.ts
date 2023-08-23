@@ -11,6 +11,7 @@ declare module "next-auth/jwt" {
     picture: string
     token: string
     onboarding: boolean
+    token: string
   }
 }
 

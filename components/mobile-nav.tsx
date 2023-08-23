@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import Link from "next/link"
 
@@ -5,8 +7,6 @@ import { MainNavItem, NavItem } from "types"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { useLockBody } from "@/hooks/use-lock-body"
-
-// import { Icons } from "@/components/icons"
 
 interface MobileNavProps {
   items: NavItem[]
@@ -27,7 +27,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
           {/* <Icons.logo /> */}
           <span className="font-bold">{siteConfig.name}</span>
         </Link>
-        <nav className="grid grid-flow-row auto-rows-max text-sm">
+        {/* <nav className="grid grid-flow-row auto-rows-max text-sm">
           {items.map((item, index) => (
             <Link
               key={index}
@@ -40,7 +40,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
               {item.title}
             </Link>
           ))}
-        </nav>
+        </nav> */}
         {children}
       </div>
     </div>

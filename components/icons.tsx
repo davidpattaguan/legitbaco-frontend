@@ -17,6 +17,7 @@ import {
   EyeOff,
   File,
   FileText,
+  GlassesIcon,
   Heart,
   HelpCircle,
   Image,
@@ -26,21 +27,27 @@ import {
   LineChart,
   Link,
   Loader2,
+  LogOut,
   LucideProps,
+  Menu,
   Moon,
   MoonIcon,
   MoreVertical,
+  Navigation,
   Pizza,
   Plus,
   Settings,
   Settings2,
+  Shield,
   ShieldAlert,
+  ShieldCheck,
   // ShieldCheck,
   ShoppingBag,
   Stethoscope,
   SunMedium,
   Syringe,
   Tablet,
+  Terminal,
   Trash,
   Twitter,
   User,
@@ -56,7 +63,26 @@ export type Icon = LucideIcon
 export const Icons = {
   settings2: Settings2,
   sun: SunMedium,
+  terminal: Terminal,
+  search: (props: LucideIcon) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className="lucide lucide-search"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  ),
   heart: Heart,
+  logout: LogOut,
   placeholder: MoonIcon,
   view: View,
   hide: EyeOff,
@@ -92,13 +118,14 @@ export const Icons = {
   warning: AlertTriangle,
   user: User,
   dollarSign: DollarSign,
-  // placeholder: ClipboardCopy,
+
   arrowRight: ArrowRight,
   help: HelpCircle,
   pizza: Pizza,
-  // check: CheckCircle,
+  hamburger: Menu,
+
   laptop: Laptop,
-  // logo: ShieldCheck,
+  logo: ShieldCheck,
   gitHub: (props: LucideProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path

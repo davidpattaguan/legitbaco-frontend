@@ -6,6 +6,10 @@ import { axiosPublic } from "./axiosclient"
 
 export const authOptions: NextAuthOptions = {
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -35,8 +39,19 @@ export const authOptions: NextAuthOptions = {
   ],
 
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
+      console.log("[ACCOUNT]", account)
+      console.log("[USER]", user)
+      console.log("[TOKEN]", token)
+
+      if (account?.provider == "google") {
+        console.log("test1")
+        token.googleToken = account.access_token
+        return token
+      }
+
       if (user) {
+        console.log("test2")
         token.id = user.auth.id
         token.email = user.auth.email
         token.firstName = user.auth.lastName
@@ -49,6 +64,7 @@ export const authOptions: NextAuthOptions = {
       return token
     },
     async session({ token, session }) {
+      console.log("[SESSION-TOKEN]", token)
       if (token) {
         session.user.id = token.id
         session.user.email = token.email

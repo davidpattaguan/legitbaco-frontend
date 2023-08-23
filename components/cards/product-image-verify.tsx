@@ -18,12 +18,12 @@ export const ProductVerifyImage = ({
             {" "}
             <div className="flex gap-2 items-center">
               <img
-                src={currentOwner.avatar}
+                src={currentOwner?.avatar}
                 className="w-9 h-9 rounded-full"
               ></img>
               <div className="flex flex-col">
                 <h5 className="font-semibold">
-                  {currentOwner.firstname} {currentOwner.lastname}
+                  {currentOwner?.firstname} {currentOwner?.lastname}
                 </h5>
                 <h6 className="text-xs">Current Owner</h6>
               </div>

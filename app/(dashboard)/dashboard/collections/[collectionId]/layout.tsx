@@ -7,10 +7,12 @@ import { getCurrentUser } from "@/lib/session"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { MainNav } from "@/components/main-nav"
 
 import "@/components/sidebar-nav"
+import { siteConfig } from "@/config/site"
 import CollectionSwitcher from "@/components/collection-switcher"
+import { MobileNav } from "@/components/layout/mobile-nav"
+import { MainNav } from "@/components/main-nav"
 import { SidebarNav } from "@/components/sidebar-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { UserAccountNav } from "@/components/user-account-nav"
@@ -78,11 +80,10 @@ export default async function DashboardLayout({
         <div className="flex container justify-between">
           <div className="flex h-16 items-center gap-4 py-6">
             <MainNav items={dashboardConfig.mainNav} />
+            <MobileNav mainNavItems={siteConfig.mainNav} sidebarNavItems={[]} />
             <CollectionSwitcher stores={stores.data} />
           </div>
           <nav className="flex items-center gap-2">
-            <ThemeToggle />
-
             {user ? (
               <>
                 <UserAccountNav

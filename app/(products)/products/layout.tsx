@@ -5,6 +5,8 @@ import { marketingConfig } from "@/config/marketing"
 import { getCurrentUser } from "@/lib/session"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { SiteFooter } from "@/components/layout/site-footer"
+import { SiteHeader } from "@/components/layout/site-header"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { UserAccountNav } from "@/components/user-account-nav"
@@ -23,40 +25,9 @@ export default async function MarketingLayout({
   // }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="container z-40 bg-background">
-        <div className="flex h-20 items-center justify-between py-6">
-          <MainNav items={marketingConfig.mainNav} />
-          <nav className="flex items-center gap-2">
-            <ThemeToggle />
-
-            {user ? (
-              <>
-                <UserAccountNav
-                  user={{
-                    name: user?.name,
-                    image: user?.image,
-                    email: user?.email,
-                  }}
-                />
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/login"
-                  className={cn(
-                    buttonVariants({ variant: "secondary", size: "sm" }),
-                    "px-4"
-                  )}
-                >
-                  Login
-                </Link>
-              </>
-            )}
-          </nav>
-        </div>
-      </header>
+    <>
+      <SiteHeader user={user} />
       <main className="flex-1">{children}</main>
-    </div>
+    </>
   )
 }

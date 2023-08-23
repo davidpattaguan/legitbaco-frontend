@@ -3,9 +3,19 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Command } from "@/components/ui/command"
 import { SignupForm } from "@/components/forms/user-signup-form"
+import { Icons } from "@/components/icons"
+import { Shell } from "@/components/shell/shell"
 
 export const metadata: Metadata = {
   title: "Register",
@@ -15,7 +25,7 @@ export const metadata: Metadata = {
 export default function RegisterPage() {
   return (
     <>
-      <div className="container relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      {/* <div className="container relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <Link
           href="/login"
           className={cn(
@@ -67,7 +77,64 @@ export default function RegisterPage() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <Shell className="max-w-xl">
+        <Card>
+          <CardHeader className="space-y-1">
+            <CardTitle className="text-2xl">Create an Account</CardTitle>
+            <CardDescription>
+              Choose your preferred sign in method
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-4">
+            {/* <OAuthSignIn /> */}
+            <Button
+              aria-label={""}
+              key={""}
+              variant="outline"
+              className="w-full bg-background sm:w-auto"
+              // onClick={() => {}}
+              disabled={true}
+            >
+              <Icons.admin className="mr-2 h-4 w-4" aria-hidden="true" />
+              Google Login Coming Soon
+            </Button>
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">
+                  Or continue with
+                </span>
+              </div>
+            </div>
+            <SignupForm />
+          </CardContent>
+          <CardFooter className="flex flex-wrap items-center justify-center gap-2">
+            <div className="text-sm text-muted-foreground">
+              <span className="mr-1 hidden sm:inline-block">
+                Already have an account?
+              </span>
+              <Link
+                aria-label="Login"
+                href="/login"
+                className="text-primary underline-offset-4 transition-colors hover:underline"
+              >
+                Login
+              </Link>
+            </div>
+            {/* <Link
+              aria-label="Reset password"
+              href="/signin/reset-password"
+              className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
+            >
+              Reset password
+            </Link> */}
+          </CardFooter>
+        </Card>
+      </Shell>
     </>
   )
 }

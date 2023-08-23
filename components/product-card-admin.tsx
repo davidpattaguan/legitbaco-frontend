@@ -68,7 +68,7 @@ export function ProductCardAdmin({
         aria-label={`View ${product.name} details`}
         href={`/products/${product.clothing_id}`}
       >
-        <CardContent className="grid gap-2.5 p-4">
+        <CardContent className="grid gap-2.5 p-3">
           <CardTitle className="line-clamp-1">{product.name}</CardTitle>
           <CardDescription className="line-clamp-2">
             {formatPrice(product.price)}

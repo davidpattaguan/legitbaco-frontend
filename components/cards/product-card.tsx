@@ -66,7 +66,7 @@ export function ProductCard({
                 alt={product.image_link}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 fill
-                className="object-cover"
+                className="object-cover rounded-t-lg"
                 loading="lazy"
               />
             ) : (
@@ -84,11 +84,15 @@ export function ProductCard({
         aria-label={`View ${product.name} details`}
         href={`/products/${product.clothing_id}`}
       >
-        <CardContent className="grid gap-1 p-4">
-          <CardTitle className="line-clamp-1">{product.name}</CardTitle>
-          <p className="text-sm text-gray-600">by: {product.shop.name}</p>
+        <CardContent className="grid gap-1 p-3">
+          <CardTitle className="text-xs md:text-lg line-clamp-2">
+            {product.name}
+          </CardTitle>
+          <p className="text-xs md:text-md text-gray-600">
+            by: {product.shop.name}
+          </p>
           <CardDescription className="flex gap-2 items-center">
-            <span>{formattedPrice}</span>
+            <span className="text-xs md:text-md">{formattedPrice}</span>
           </CardDescription>
         </CardContent>
       </Link>

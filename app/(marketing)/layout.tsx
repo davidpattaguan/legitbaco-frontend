@@ -1,11 +1,29 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
+import { dashboardConfig } from "@/config/dashboard"
 import { marketingConfig } from "@/config/marketing"
+import { siteConfig } from "@/config/site"
 import { getCurrentUser } from "@/lib/session"
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button, buttonVariants } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { MenuItems } from "@/components/categories-nav"
 import { SearchSite } from "@/components/forms/search-site"
+import { Icons } from "@/components/icons"
+import { MobileNav } from "@/components/layout/mobile-nav"
+import { SiteFooter } from "@/components/layout/site-footer"
+import { SiteHeader } from "@/components/layout/site-header"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { UserAccountNav } from "@/components/user-account-nav"
@@ -18,49 +36,17 @@ export default async function MarketingLayout({
   children,
 }: MarketingLayoutProps) {
   const user = await getCurrentUser()
-
-  // if (!user) {
-  //   return notFound()
-  // }
+  const initials = `${user?.firstName?.charAt(0) ?? ""} ${
+    user?.lastName?.charAt(0) ?? ""
+  }`
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="z-40 fixed w-full bg-white">
-        <div className="container">
-          <div className="flex h-16 items-center justify-between py-6 gap-20">
-            <MainNav items={marketingConfig.mainNav} />
+    <>
+      <SiteHeader isLogoPresent={true} user={user} />
 
-            <nav className="flex items-center gap-2">
-              {/* <ThemeToggle /> */}
-
-              {user ? (
-                <>
-                  <UserAccountNav
-                    user={{
-                      name: user?.name,
-                      image: user?.image,
-                      email: user?.email,
-                    }}
-                  />
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/login"
-                    className={cn(
-                      buttonVariants({ variant: "secondary", size: "sm" }),
-                      "px-4"
-                    )}
-                  >
-                    Login
-                  </Link>
-                </>
-              )}
-            </nav>
-          </div>
-        </div>
-      </header>
       <main className="flex-1">{children}</main>
-    </div>
+
+      <SiteFooter />
+    </>
   )
 }
