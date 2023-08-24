@@ -39,10 +39,11 @@ export const authOptions: NextAuthOptions = {
   ],
 
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account, profile }) {
       console.log("[ACCOUNT]", account)
       console.log("[USER]", user)
       console.log("[TOKEN]", token)
+      console.log("[TOKEN]", profile)
 
       if (account?.provider == "google") {
         console.log("test1")

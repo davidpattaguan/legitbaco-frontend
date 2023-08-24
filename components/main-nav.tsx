@@ -60,7 +60,7 @@ export function MainNav({ items }: MainNavProps) {
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  {items[0].items.map((item) => (
+                  {items[0].items.map((item: any) => (
                     <ListItem
                       key={item.title}
                       title={item.title}
@@ -83,7 +83,7 @@ export function MainNav({ items }: MainNavProps) {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {item.items.map((item) => (
+                      {item.items.map((item: any) => (
                         <ListItem
                           key={item.title}
                           title={item.title}

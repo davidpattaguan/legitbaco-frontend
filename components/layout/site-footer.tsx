@@ -1,8 +1,6 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { Shell } from "@/components/shell/shell"
 
@@ -30,7 +28,7 @@ export function SiteFooter() {
               <span className="font-bold">{siteConfig.name}</span>
             </Link>
           </section>
-          <section
+          {/* <section
             id="footer-links"
             aria-labelledby="footer-links-heading"
             className="grid flex-1 grid-cols-1 gap-10 xs:grid-cols-2 sm:grid-cols-3"
@@ -55,7 +53,7 @@ export function SiteFooter() {
                 </ul>
               </div>
             ))}
-          </section>
+          </section> */}
         </section>
         <section
           id="footer-bottom"

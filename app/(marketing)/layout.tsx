@@ -36,9 +36,6 @@ export default async function MarketingLayout({
   children,
 }: MarketingLayoutProps) {
   const user = await getCurrentUser()
-  const initials = `${user?.firstName?.charAt(0) ?? ""} ${
-    user?.lastName?.charAt(0) ?? ""
-  }`
 
   return (
     <>

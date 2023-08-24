@@ -11,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import "@/components/sidebar-nav"
 import { siteConfig } from "@/config/site"
 import CollectionSwitcher from "@/components/collection-switcher"
+import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { MainNav } from "@/components/main-nav"
 import { SidebarNav } from "@/components/sidebar-nav"
@@ -74,13 +75,52 @@ export default async function DashboardLayout({
     redirect("/create-collection")
   }
 
+  interface SidebarNavProps {
+    title: string
+    href: string
+    disabled?: boolean
+    external?: boolean
+    icon?: keyof typeof Icons
+    subitems?: []
+  }
+
+  const sidebarnav: Array<SidebarNavProps> = [
+    {
+      title: "Overview",
+      href: `/dashboard/collections/${params.collectionId}`,
+      icon: "store",
+      disabled: false,
+    },
+    {
+      title: "Items",
+      href: `/dashboard/collections/${params.collectionId}/items`,
+      icon: "store",
+      disabled: false,
+    },
+    {
+      title: "Orders",
+      href: `/dashboard/collections/${params.collectionId}/orders`,
+      icon: "store",
+      disabled: false,
+    },
+    {
+      title: "Customize Shop",
+      href: `/dashboard/collections/${params.collectionId}/settings`,
+      icon: "store",
+      disabled: false,
+    },
+  ]
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="fixed  w-full  z-40 bg-background border-b">
         <div className="flex container justify-between">
           <div className="flex h-16 items-center gap-4 py-6">
             <MainNav items={dashboardConfig.mainNav} />
-            <MobileNav mainNavItems={siteConfig.mainNav} sidebarNavItems={[]} />
+            <MobileNav
+              mainNavItems={siteConfig.mainNav}
+              sidebarNavItems={sidebarnav}
+            />
             <CollectionSwitcher stores={stores.data} />
           </div>
           <nav className="flex items-center gap-2">

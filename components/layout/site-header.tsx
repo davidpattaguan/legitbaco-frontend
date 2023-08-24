@@ -6,16 +6,6 @@ import { dashboardConfig } from "@/config/dashboard"
 import { siteConfig } from "@/config/site"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button, buttonVariants } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 // import { CartSheet } from "@/components/cart/cart-sheet"
 // import { Combobox } from "@/components/combobox"
 import { Icons } from "@/components/icons"
@@ -30,8 +20,8 @@ import { MobileNav } from "./mobile-nav"
 // import { MobileNav } from "@/components/layouts/mobile-nav"
 
 interface SiteHeaderProps {
-  user: User | null
-  isLogoPresent: boolean
+  user: any
+  isLogoPresent?: boolean
 }
 
 export function SiteHeader({ user, isLogoPresent }: SiteHeaderProps) {
@@ -79,8 +69,8 @@ export function SiteHeader({ user, isLogoPresent }: SiteHeaderProps) {
           </div>
         </div>
       </header>
-      <div className="border-b">
-        <div className="container my-2">
+      <div className="border-b hidden lg:flex">
+        <div className="container my-2 ">
           <MenuItems />
         </div>
       </div>

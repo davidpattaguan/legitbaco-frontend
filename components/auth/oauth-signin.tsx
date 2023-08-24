@@ -37,12 +37,12 @@ const OAuthSignIn: FC<UserAuthFormProps> = ({ className, ...props }) => {
       <Button
         // isLoading={isLoading}
         type="button"
-        size="sm"
+        variant={"default"}
         className="w-full"
         onClick={loginWithGoogle}
         disabled={isLoading}
       >
-        {isLoading ? null : <Icons.admin className="h-4 w-4 mr-2" />}
+        {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
         Google
       </Button>
     </div>

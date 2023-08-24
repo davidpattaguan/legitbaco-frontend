@@ -21,7 +21,7 @@ import { Icons } from "@/components/icons"
 interface MobileNavProps {
   mainNavItems?: MainNavItem[]
   sidebarNavItems: SidebarNavItem[]
-  isLogoPresent: boolean
+  isLogoPresent?: boolean
 }
 
 export function MobileNav({
@@ -37,19 +37,23 @@ export function MobileNav({
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className=" px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
+          className=" px-0 mr-3 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
         >
           <Icons.hamburger className="h-6 w-6" />
           <span className="sr-only">Toggle Menu</span>
-          {/* <Link
-            href="/"
-            className=" z-20 flex items-center text-lg font-bold tracking-tight"
-          >
-            <Icons.logo className="ml-1 mr-1 h-6 w-6" aria-hidden="true" />
-            <span>{siteConfig.name}</span>
-          </Link> */}
         </Button>
       </SheetTrigger>
+      <div className="lg:hidden">
+        {" "}
+        <Link
+          href="/"
+          className=" z-20 flex items-center text-lg font-bold tracking-tight"
+        >
+          <Icons.logo className="ml-1 mr-1 h-6 w-6" aria-hidden="true" />
+          <span>{siteConfig.name}</span>
+        </Link>
+      </div>
+
       <SheetContent side="left" className="pl-1 pr-0">
         <div className="px-7">
           <Link
@@ -72,7 +76,7 @@ export function MobileNav({
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="flex flex-col space-y-2">
-                      {item.items?.map((subItem, index) =>
+                      {item?.items?.map((subItem: any, index: any) =>
                         subItem.href ? (
                           <MobileLink
                             key={index}
@@ -97,10 +101,8 @@ export function MobileNav({
                 </AccordionItem>
               ))}
               <AccordionItem value="sidebar">
-                <AccordionTrigger className="text-sm">
-                  Sidebar Menu
-                </AccordionTrigger>
-                <AccordionContent>
+                <AccordionTrigger className="text-sm">Menu</AccordionTrigger>
+                <AccordionContent defaultChecked>
                   <div className="flex flex-col space-y-2">
                     {sidebarNavItems?.map((item, index) =>
                       item.href ? (
