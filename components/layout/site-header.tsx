@@ -1,46 +1,27 @@
 import Link from "next/link"
+import { User } from "@/types"
 
-// import type { User } from "@clerk/nextjs/dist/types/server"
-
-import { dashboardConfig } from "@/config/dashboard"
 import { siteConfig } from "@/config/site"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button, buttonVariants } from "@/components/ui/button"
-// import { CartSheet } from "@/components/cart/cart-sheet"
-// import { Combobox } from "@/components/combobox"
-import { Icons } from "@/components/icons"
+import { buttonVariants } from "@/components/ui/button"
+import { MenuItems } from "@/components/categories-nav"
 
-import { MenuItems } from "../categories-nav"
 import { Combobox } from "../combobox"
 import { MainNav } from "../main-nav"
 import { UserAccountNav } from "../user-account-nav"
 import { MobileNav } from "./mobile-nav"
 
-// import { MainNav } from "@/components/layouts/main-nav"
-// import { MobileNav } from "@/components/layouts/mobile-nav"
-
 interface SiteHeaderProps {
-  user: any
-  isLogoPresent?: boolean
+  user: User | undefined
 }
 
-export function SiteHeader({ user, isLogoPresent }: SiteHeaderProps) {
-  const initials = `${user?.firstName?.charAt(0) ?? ""} ${
-    user?.lastName?.charAt(0) ?? ""
-  }`
-
+export function SiteHeader({ user }: SiteHeaderProps) {
   return (
     <>
-      {" "}
       <header className="sticky top-0 z-40 w-full bg-background">
         <div className="border-b ">
           <div className="container flex h-16 items-center ">
-            <MainNav items={siteConfig.mainNav} />
-            <MobileNav
-              isLogoPresent={isLogoPresent}
-              mainNavItems={siteConfig.mainNav}
-              sidebarNavItems={[]}
-            />
+            <MainNav />
+            <MobileNav mainNavItems={siteConfig.mainNav} sidebarNavItems={[]} />
 
             <div className="flex flex-1 items-center justify-end space-x-4">
               <nav className="flex items-center space-x-2">
@@ -48,9 +29,9 @@ export function SiteHeader({ user, isLogoPresent }: SiteHeaderProps) {
                 {user ? (
                   <UserAccountNav
                     user={{
-                      name: user?.name,
-                      image: user?.image,
-                      email: user?.email,
+                      name: user.firstName,
+                      image: user.picture,
+                      email: user.email,
                     }}
                   />
                 ) : (
@@ -71,7 +52,7 @@ export function SiteHeader({ user, isLogoPresent }: SiteHeaderProps) {
       </header>
       <div className="border-b hidden lg:flex">
         <div className="container my-2 ">
-          <MenuItems />
+          <MenuItems items={siteConfig.mainNav} />
         </div>
       </div>
     </>

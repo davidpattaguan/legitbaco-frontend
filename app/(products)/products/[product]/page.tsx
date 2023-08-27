@@ -52,8 +52,6 @@ export default async function IndexPage({ params }: PageProps) {
     return redirect("/login")
   }
 
-  console.log(product)
-
   const ItemHeader = ({ shop, name }: any) => {
     return (
       <>
@@ -61,9 +59,6 @@ export default async function IndexPage({ params }: PageProps) {
           <h1 className="font-bold text-3xl">{name}</h1>
           <div className="flex gap-1 items-center">
             <h3 className="text-md">Created by: {shop.name}</h3>
-            {/* <div className="flex gap-2">
-              <Icons.verified className="w-6 h-6 text-white dark:text-inherit fill-yellow-500" />
-            </div> */}
           </div>
         </div>
         <div className="mt-2 flex gap-2">

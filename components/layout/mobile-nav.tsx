@@ -21,14 +21,9 @@ import { Icons } from "@/components/icons"
 interface MobileNavProps {
   mainNavItems?: MainNavItem[]
   sidebarNavItems: SidebarNavItem[]
-  isLogoPresent?: boolean
 }
 
-export function MobileNav({
-  mainNavItems,
-  sidebarNavItems,
-  isLogoPresent,
-}: MobileNavProps) {
+export function MobileNav({ mainNavItems, sidebarNavItems }: MobileNavProps) {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
 
@@ -100,7 +95,7 @@ export function MobileNav({
                   </AccordionContent>
                 </AccordionItem>
               ))}
-              <AccordionItem value="sidebar">
+              {/* <AccordionItem value="sidebar">
                 <AccordionTrigger className="text-sm">Menu</AccordionTrigger>
                 <AccordionContent defaultChecked>
                   <div className="flex flex-col space-y-2">
@@ -126,7 +121,7 @@ export function MobileNav({
                     )}
                   </div>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </div>
         </ScrollArea>

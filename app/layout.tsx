@@ -1,6 +1,7 @@
 import "@uploadthing/react/styles.css"
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/react"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -16,9 +17,57 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "Online Auction",
+    "Bidding Marketplace",
+    "Ecommerce Auction",
+    "Auction Website",
+    "Bid and Sell",
+    "Trading Platform",
+    "Bargain Deals",
+    "Bid Wars",
+    "Auction House",
+    "Collectibles Auction",
+    "Antiques Auction",
+    "Buy and Sell",
+    "Rare Items Auction",
+    "Vintage Items",
+    "Electronics Auction",
+    "Gaming Gear Auction",
+    "Timed Bidding",
+    "Competitive Bidding",
+    "Secure Auctions",
+    "Auction Technology",
+    "Virtual Auctions",
+    "Top Auction Site",
+    "Best Bidding Experience",
+    "Auction Community",
+    "Bid Online",
+    "Auction Events",
+    "Unique Collectibles",
+    "Auction Listings",
+    "Start Bidding",
+    "Live Bidding",
+    "Online Trading",
+    "Place Bids",
+    "Auction App",
+    "Economical Deals",
+    "Auction Enthusiasts",
+    "Sell Items",
+    "Join the Bidding",
+    "Auction Discoveries",
+    "Bidding Wars",
+    "Auction Marketplace",
+    "Bid and Win",
+    "Bidding Platform",
+    "Auction Listings",
+    "Ecommerce Trading",
+    "Discover Auctions",
+    "Bidding Opportunities",
+  ],
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
-    // { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
     icon: "/favicon.ico",
@@ -43,10 +92,25 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <Providers>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeProvider attribute="class" defaultTheme="light">
               {children}
               <Toaster />
-              <TailwindIndicator />
+              {process.env.NODE_ENV == "development" ? (
+                <>
+                  {" "}
+                  <TailwindIndicator />
+                </>
+              ) : (
+                ""
+              )}
+
+              {process.env.NODE_ENV == "production" ? (
+                <>
+                  <Analytics />
+                </>
+              ) : (
+                ""
+              )}
             </ThemeProvider>
           </Providers>
         </body>

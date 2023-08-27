@@ -1,16 +1,43 @@
-import { User } from "@prisma/client"
 import type { Icon } from "lucide-react"
 
 import { Icons } from "@/components/icons"
 
-export type NavItem = {
+export interface NavItem {
   title: string
-  href: string
-  items: any
+  href?: string
   disabled?: boolean
+  external?: boolean
+  icon?: keyof typeof Icons
+  label?: string
+  description?: string
+}
+
+export interface NavItemWithChildren extends NavItem {
+  items: NavItemWithChildren[]
+}
+
+export interface NavItemWithOptionalChildren extends NavItem {
+  items?: NavItemWithChildren[]
+}
+export type MainNavItem = NavItemWithOptionalChildren
+interface User {
+  id: string
+  email: string
+  firstName: string
+  lastName: string
+  role: string
+  picture: string
+  token: string
+  onboarding: boolean
 }
 
 export type MainNavItem = NavItem
+
+export interface Option {
+  label: string
+  value: string
+  icon?: React.ComponentType<{ className?: string }>
+}
 
 export type sidebarSubitems = {
   title: string

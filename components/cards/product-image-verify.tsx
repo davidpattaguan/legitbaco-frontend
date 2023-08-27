@@ -17,7 +17,7 @@ export const ProductVerifyImage = ({
         <CardHeader className="p-3 ">
           <div className="flex justify-between items-center">
             {" "}
-            <Link href={`/users/${currentOwner.id}`}>
+            <Link href={`/users/${currentOwner?.id}`}>
               {" "}
               <div className="flex gap-2 items-center">
                 <img

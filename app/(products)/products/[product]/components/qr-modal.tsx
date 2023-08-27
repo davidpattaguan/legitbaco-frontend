@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import * as z from "zod"
 
 import {
@@ -13,11 +14,6 @@ import {
 import { Modal } from "@/components/ui/modal"
 
 import QrForm from "./qr-form"
-import TradeForm from "./trade-form"
-
-const formSchema = z.object({
-  name: z.string().min(2).max(50),
-})
 
 interface AlertModalProps {
   user: any
@@ -25,7 +21,7 @@ interface AlertModalProps {
 
 export const QrModal: React.FC<AlertModalProps> = ({ user }) => {
   const [isMounted, setIsMounted] = useState(false)
-
+  const router = useRouter()
   useEffect(() => {
     setIsMounted(true)
   }, [])
@@ -36,14 +32,22 @@ export const QrModal: React.FC<AlertModalProps> = ({ user }) => {
 
   return (
     <>
-      <Dialog open={!user}>
+      {/* <Dialog>
         <DialogContent>
           <DialogTitle>Redeem This Item</DialogTitle>
           <DialogDescription>Redeem This Item to continue.</DialogDescription>
-
-          <QrForm />
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
+      <Modal
+        title="Are you sure?"
+        description="This Action cannot be undone"
+        isOpen={true}
+        onClose={() => {
+          router.push("/")
+        }}
+      >
+        <QrForm />
+      </Modal>
     </>
   )
 }

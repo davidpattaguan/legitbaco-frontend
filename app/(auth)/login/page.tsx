@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Login to your account",
 }
 
-export default function LoginPage({ searchParams }: any) {
+export default function LoginPage() {
   return (
     <Shell className="max-w-md">
       <Card>

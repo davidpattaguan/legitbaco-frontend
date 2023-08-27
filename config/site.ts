@@ -1,16 +1,54 @@
+import { MainNavItem } from "@/types"
+
+import { productCategories } from "@/config/productCategories"
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "Legitba.co",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Legitba.co is an Authenticator and Verificator Website for your Items",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    facebook: "facebook.com/legitbaco",
   },
 
-  mainNav: [],
+  mainNav: [
+    {
+      title: "Lobby",
+      items: [
+        {
+          title: "Collections",
+          href: "/collections",
+          description: "Browse Collections From Different Users!",
+          items: [],
+        },
+        {
+          title: "Items",
+          href: "/products",
+          description: "Find the next Item for your collection ",
+          items: [],
+        },
+      ],
+    },
+    ...productCategories.map((category) => ({
+      title: category.title,
+      items: [
+        {
+          title: "All",
+          href: `/categories/`,
+          description: `All ${category.title}.`,
+          items: [],
+        },
+        ...category.subcategories.map((subcategory) => ({
+          title: subcategory.title,
+          href: `/categories/${subcategory.slug}`,
+          description: subcategory.description,
+          items: [],
+        })),
+      ],
+    })),
+  ] satisfies MainNavItem[],
+
   footerNav: [
     // {
     //   title: "Help",

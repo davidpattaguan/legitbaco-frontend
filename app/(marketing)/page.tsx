@@ -371,11 +371,11 @@ export default async function IndexPage() {
           className="grid place-items-center gap-6 rounded-lg border bg-card px-6 py-16 text-center text-card-foreground shadow-sm my-10"
         >
           <h2 className="text-2xl font-medium sm:text-3xl">
-            Do you want to start trading on our website?
+            Secure your collections and trade with ease!
           </h2>
           <Link href="/dashboard/stores">
             <div className={cn(buttonVariants())}>
-              Add a collection
+              Start your collections now!
               <span className="sr-only">Create a store</span>
             </div>
           </Link>
