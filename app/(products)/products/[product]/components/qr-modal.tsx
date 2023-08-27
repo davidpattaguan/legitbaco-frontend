@@ -41,7 +41,7 @@ export const QrModal: React.FC<AlertModalProps> = ({ user }) => {
       <Modal
         title="Are you sure?"
         description="This Action cannot be undone"
-        isOpen={true}
+        isOpen={user}
         onClose={() => {
           router.push("/")
         }}
