@@ -116,7 +116,7 @@ export default async function DashboardLayout({
       <header className="fixed  w-full  z-40 bg-background border-b">
         <div className="flex container justify-between">
           <div className="flex h-16 items-center gap-4 py-6">
-            <MainNav items={dashboardConfig.mainNav} />
+            <MainNav />
             <MobileNav
               mainNavItems={siteConfig.mainNav}
               sidebarNavItems={sidebarnav}

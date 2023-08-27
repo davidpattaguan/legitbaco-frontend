@@ -38,7 +38,7 @@ export function Hero() {
 
   return (
     <>
-      <div
+      {/* <div
         role="region"
         aria-label="Hero"
         aria-roledescription="carousel"
@@ -54,7 +54,7 @@ export function Hero() {
           className="object-cover h-[64vh] w-full"
         />
 
-        {/* <div className="absolute inset-x-0 bottom-2 z-20 flex justify-center gap-2 pb-2">
+        <div className="absolute inset-x-0 bottom-2 z-20 flex justify-center gap-2 pb-2">
           {heroImages.map((image, index) => (
             <Button
               key={image.title}
@@ -69,8 +69,8 @@ export function Hero() {
               </span>
             </Button>
           ))}
-        </div> */}
-        {/* <div className="absolute inset-x-0 inset-y-1/2 z-20 hidden justify-between px-4 py-2 md:flex">
+        </div>
+        <div className="absolute inset-x-0 inset-y-1/2 z-20 hidden justify-between px-4 py-2 md:flex">
         <Button
           size="sm"
           className="w-9 rounded-full bg-zinc-500 p-0 text-white hover:bg-zinc-600"
@@ -87,10 +87,8 @@ export function Hero() {
           <Icons.chevronRight className="h-6 w-6" aria-hidden="true" />
           <span className="sr-only">Next slide</span>
         </Button>
-      </div> */}
       </div>
-<<<<<<< Updated upstream
-=======
+      </div>
 
       <section
         id="categories"
@@ -130,8 +128,7 @@ export function Hero() {
             </Link>
           ))}
         </div>
-      </section>
->>>>>>> Stashed changes
+      </section> */}
     </>
   )
 }
