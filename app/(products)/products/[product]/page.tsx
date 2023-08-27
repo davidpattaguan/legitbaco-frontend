@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Metadata } from "next"
 import { notFound, redirect } from "next/navigation"
 import axios, { AxiosError } from "axios"
 
@@ -14,6 +15,22 @@ import TradeOperation from "./components/trade-operation"
 
 interface PageProps {
   params: { product: string }
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const product = await getProduct(params.product)
+  if (!product.data)
+    return {
+      title: "Not Found",
+      description: "The page is nout found",
+    }
+
+  return {
+    title: product.data.name,
+    description: product.data.description,
+  }
 }
 
 export const revalidate = 0
