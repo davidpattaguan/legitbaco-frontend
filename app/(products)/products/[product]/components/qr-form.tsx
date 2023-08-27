@@ -29,13 +29,11 @@ type TradeFormValue = z.infer<typeof formSchema>
 
 const QrForm = () => {
   const router = useRouter()
-  const params = useParams()
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
   const form = useForm<TradeFormValue>({
     resolver: zodResolver(formSchema),
-    defaultValues: { OTP: 0 },
   })
   const onSubmit = async (data: TradeFormValue) => {
     try {
