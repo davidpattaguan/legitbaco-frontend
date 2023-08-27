@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import { User } from "@/types"
 import * as z from "zod"
 
 import {
@@ -16,10 +17,12 @@ import { Modal } from "@/components/ui/modal"
 import QrForm from "./qr-form"
 
 interface AlertModalProps {
-  user: any
+  user: User
 }
 
-export const QrModal: React.FC<AlertModalProps> = ({ user }) => {
+export const QrModal: React.FC<AlertModalProps> = ({
+  user,
+}: AlertModalProps) => {
   const [isMounted, setIsMounted] = useState(false)
   const router = useRouter()
   useEffect(() => {
@@ -41,7 +44,7 @@ export const QrModal: React.FC<AlertModalProps> = ({ user }) => {
       <Modal
         title="Are you sure?"
         description="This Action cannot be undone"
-        isOpen={user}
+        isOpen={!user}
         onClose={() => {
           router.push("/")
         }}
