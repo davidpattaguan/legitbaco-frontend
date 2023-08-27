@@ -1,11 +1,15 @@
-import Link from "next/link"
+import { ErrorCard } from "@/components/error-card"
+import { Shell } from "@/components/shell/shell"
 
-export default function NotFound() {
+export default function ProductNotFound() {
   return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
-    </div>
+    <Shell variant="centered" className="max-w-md">
+      <ErrorCard
+        title="Something Went Wrong!"
+        description="Please try again."
+        retryLink="/"
+        retryLinkText="Go to Home"
+      />
+    </Shell>
   )
 }

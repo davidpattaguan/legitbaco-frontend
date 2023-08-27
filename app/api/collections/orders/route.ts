@@ -17,11 +17,6 @@ export async function POST(
 
     const body = await req.json()
 
-    console.log("[API_CREATE_NEW_ITEM]", body)
-
-    console.log("[TRADABLETYPE]", typeof body.tradable)
-    console.log("[FEATUREDTYPE]", typeof body.tradable)
-
     const response = await axios.post(
       `${process.env.BACKEND_URL}/clothing/operations/colletions/offers/list`,
       body,
@@ -35,8 +30,6 @@ export async function POST(
     if (response.data.status === "failed") {
       return new NextResponse(response.data.data.message, { status: 400 })
     }
-
-    console.log("[API_CREATE_NEW_ITEM_RESPONSE]", response.data)
 
     return NextResponse.json(response.data)
   } catch (error) {

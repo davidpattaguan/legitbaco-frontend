@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { notFound } from "next/navigation"
 
 import { ProductCard } from "@/components/cards/product-card"
@@ -59,11 +58,11 @@ export default async function IndexPage({
         <div className="flex items-center">
           <h2 className="flex-1 text-2xl font-medium sm:text-3xl">Items</h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {/* <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {user?.data.items.map((item: any) => {
             return <ProductCard product={item} />
           })}
-        </div>
+        </div> */}
       </section>
 
       <section

@@ -20,10 +20,6 @@ export default async function MarketingLayout({
 }: MarketingLayoutProps) {
   const user = await getCurrentUser()
 
-  // if (!user) {
-  //   return notFound()
-  // }
-
   return (
     <>
       <SiteHeader user={user} />

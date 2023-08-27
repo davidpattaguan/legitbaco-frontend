@@ -5,14 +5,10 @@ import { cn } from "@/lib/utils"
 import { Alert, AlertTitle } from "@/components/ui/alert"
 import { buttonVariants } from "@/components/ui/button"
 import { OnboardingForm } from "@/components/forms/onboarding-form"
-import { UserAuthForm } from "@/components/forms/user-auth-form"
-import { Icons } from "@/components/icons"
-
-// import { UserAuthForm } from "@/components/user-auth-form"
 
 export const metadata: Metadata = {
-  title: "Login",
-  description: "Login to your account",
+  title: "Onboarding",
+  description: "Finish your Signup Details",
 }
 
 export default function Onboarding({ searchParams }: any) {

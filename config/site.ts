@@ -11,6 +11,7 @@ export const siteConfig = {
   links: {
     facebook: "facebook.com/legitbaco",
   },
+  url: "https://legitba.co",
 
   mainNav: [
     {
@@ -50,30 +51,30 @@ export const siteConfig = {
   ] satisfies MainNavItem[],
 
   footerNav: [
-    // {
-    //   title: "Help",
-    //   items: [
-    //     {
-    //       title: "About",
-    //       href: "/about",
-    //       external: false,
-    //     },
-    //     {
-    //       title: "Contact",
-    //       href: "/contact",
-    //       external: false,
-    //     },
-    //     {
-    //       title: "Terms",
-    //       href: "/terms",
-    //       external: false,
-    //     },
-    //     {
-    //       title: "Privacy",
-    //       href: "/privacy",
-    //       external: false,
-    //     },
-    //   ],
-    // },
+    {
+      title: "Help",
+      items: [
+        {
+          title: "About",
+          href: "/about",
+          external: false,
+        },
+        {
+          title: "Contact",
+          href: "/contact",
+          external: false,
+        },
+        {
+          title: "Terms",
+          href: "/terms",
+          external: false,
+        },
+        {
+          title: "Privacy",
+          href: "/privacy",
+          external: false,
+        },
+      ],
+    },
   ],
 }
