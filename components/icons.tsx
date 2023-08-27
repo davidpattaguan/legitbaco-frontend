@@ -22,11 +22,11 @@ import {
   Link,
   Loader2,
   LogOut,
-  LucideProps,
   Menu,
   Moon,
   MoreVertical,
   Pizza,
+  PlaneIcon,
   Plus,
   Settings,
   Settings2,
@@ -47,7 +47,8 @@ import {
   Verified,
   View,
   X,
-  type Icon as LucideIcon,
+  type LucideIcon,
+  type LucideProps,
 } from "lucide-react"
 
 export type Icon = LucideIcon
@@ -55,7 +56,7 @@ export type Icon = LucideIcon
 export const Icons = {
   settings2: Settings2,
   sun: SunMedium,
-
+  placeholder: PlaneIcon,
   terminal: Terminal,
   search: (props: LucideIcon) => (
     <svg
