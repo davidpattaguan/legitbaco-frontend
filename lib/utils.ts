@@ -17,6 +17,6 @@ export function formatPrice(
   }).format(Number(price))
 }
 
-export function isMacOs() {
-  return window.navigator.userAgent.includes("Mac")
-}
+// export function isMacOs() {
+//   return window.navigator.userAgent.includes("Mac")
+// }
