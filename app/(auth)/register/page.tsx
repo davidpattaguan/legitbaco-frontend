@@ -1,7 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -10,9 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import OAuthSignIn from "@/components/auth/oauth-signin"
 import { SignupForm } from "@/components/forms/user-signup-form"
-import { Icons } from "@/components/icons"
 import { Shell } from "@/components/shell/shell"
 
 export const metadata: Metadata = {
@@ -45,7 +42,7 @@ export default function RegisterPage() {
             </div>
             <SignupForm />
           </CardContent>
-          <CardFooter className="flex flex-wrap items-center justify-center gap-2">
+          <CardFooter className="flex flex-wrap items-center justify-between gap-2">
             <div className="text-sm text-muted-foreground">
               <span className="mr-1 hidden sm:inline-block">
                 Already have an account?
@@ -58,13 +55,13 @@ export default function RegisterPage() {
                 Login
               </Link>
             </div>
-            {/* <Link
+            <Link
               aria-label="Reset password"
-              href="/signin/reset-password"
+              href="/forgot-password"
               className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
             >
               Reset password
-            </Link> */}
+            </Link>
           </CardFooter>
         </Card>
       </Shell>
