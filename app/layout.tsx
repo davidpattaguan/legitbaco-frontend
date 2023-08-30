@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+  verification: {
+    google:
+      "google-site-verification=YcFmtndVFxoY58xu4ewxFE4Cr3oEVnkw7HDLYNx3FC4",
+  },
+
   description: siteConfig.description,
   keywords: [
     "Online Auction",
@@ -75,6 +80,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
 interface RootLayoutProps {
