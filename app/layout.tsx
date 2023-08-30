@@ -18,8 +18,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   verification: {
-    google:
-      "google-site-verification=YcFmtndVFxoY58xu4ewxFE4Cr3oEVnkw7HDLYNx3FC4",
+    google: "YcFmtndVFxoY58xu4ewxFE4Cr3oEVnkw7HDLYNx3FC4",
   },
 
   description: siteConfig.description,
