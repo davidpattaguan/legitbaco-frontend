@@ -1,3 +1,4 @@
+import axios from "axios"
 import { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google"
@@ -9,6 +10,12 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      // authorization: {
+      //   params: {
+      //     scope: "email profile openid",
+      //     redirect_uri: "https://api.legitba.co/auth/callback",
+      //   },
+      // },
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -41,7 +48,23 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user, account, profile }) {
       if (account?.provider == "google") {
-        console.log("test1")
+        console.log("acxcoun", account)
+        const response = await axios.post(
+          `${process.env.BACKEND_URL}/google/auth` as string,
+          { authorization: account.id_token },
+          {
+            headers: {
+              Authorization: account.id_token,
+            },
+          }
+        )
+        // .then(() => {})
+        // .catch((err) => {
+        //   console.log(err)
+        // })
+
+        console.log("BE DATA", response)
+
         token.googleToken = account.access_token
         return token
       }
