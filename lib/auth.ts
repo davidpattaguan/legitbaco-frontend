@@ -48,7 +48,6 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user, account, profile }) {
       if (account?.provider == "google") {
-        console.log("acxcoun", account)
         const response = await axios.post(
           `${process.env.BACKEND_URL}/google/auth` as string,
           { authorization: account.access_token },
@@ -59,9 +58,18 @@ export const authOptions: NextAuthOptions = {
           }
         )
 
-        console.log("BE DATA", response)
+        console.log("BE DATA", response.data)
 
-        token.googleToken = account.access_token
+        token.id = response.data.data.auth.id
+        token.email = response.data.data.auth.email
+        token.firstName = response.data.data.auth.lastName
+        token.lastName = response.data.data.auth.lastName
+        token.role = response.data.data.auth.role
+        token.picture = response.data.data.auth.avatar
+        token.token = response.data.token
+
+        console.log("Token", token)
+
         return token
       }
 

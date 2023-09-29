@@ -26,6 +26,8 @@ async function checkOnBoarding(user: any) {
       headers: { Authorization: `Bearer ${user.token}` },
     })
 
+    console.log("Onboarding", response)
+
     const data = await response.json()
 
     return data
