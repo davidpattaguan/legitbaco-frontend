@@ -51,17 +51,13 @@ export const authOptions: NextAuthOptions = {
         console.log("acxcoun", account)
         const response = await axios.post(
           `${process.env.BACKEND_URL}/google/auth` as string,
-          { authorization: account.id_token },
+          { authorization: account.access_token },
           {
             headers: {
-              Authorization: account.id_token,
+              Authorization: account.access_token,
             },
           }
         )
-        // .then(() => {})
-        // .catch((err) => {
-        //   console.log(err)
-        // })
 
         console.log("BE DATA", response)
 
